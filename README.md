@@ -34,6 +34,8 @@ It's a basic authentication / login workflow with a LibGDX client and Spring Boo
 6. Ping functionality to get the current latency
 7. Chat
 
+The login handling is done with REST requests. For the game, the transport is changed to websocket. Multiple websocket endpoints are supported to enable load balancing by use case. For example, the chat could run on different servers than the game.
+
 ## Architecture
 ### Client
 The client consists of two main parts.
