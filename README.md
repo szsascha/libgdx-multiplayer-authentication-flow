@@ -2,12 +2,26 @@
 
 About 10 years ago I was really into game development. It was fascinating to me how so big simulations are working. Especially multiplayer games with real time interactions. It looses a bit of the magic after I found out about how all the engines and algorithms are working. But a short while ago I was again a bit catched by the idea of creating my own multiplayer game. So I decided to get a bit into game development again and open source some of my work. So I also open sourced this part.
 
+![Login screen](img/login.jpeg)
+![Chat screen](img/chat.jpeg)
+
 ## Requirements
 - Java 17
 
 ## Setup
 
+1. Clone this repo
+2. Navigate into the `client` directory
+3. Run `./gradlew clean build`
+4. Navigate into the `server` directory
+5. Run `./gradlew clean build`
+
 ## Run the game
+
+1. Navigate into the `client` directory
+2. Run `./gradlew run`
+3. Navigate into the `server` directory
+4. Run `./gradlew bootRun`
 
 ## Functionality
 
