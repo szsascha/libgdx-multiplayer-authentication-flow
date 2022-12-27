@@ -1,6 +1,5 @@
 package com.github.szsascha.game.multiplayer.state.login;
 
-import com.github.szsascha.game.multiplayer.client.GameClientState;
 import com.github.szsascha.game.multiplayer.state.GameState;
 import com.github.szsascha.game.multiplayer.ui.UI;
 import com.github.szsascha.game.multiplayer.ui.menu.LoginMenu;

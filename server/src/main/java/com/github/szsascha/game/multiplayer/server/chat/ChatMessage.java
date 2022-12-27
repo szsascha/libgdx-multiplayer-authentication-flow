@@ -1,6 +1,6 @@
 package com.github.szsascha.game.multiplayer.server.chat;
 
-import com.github.szsascha.game.multiplayer.server.websocket.BaseMessage;
+import com.github.szsascha.game.multiplayer.server.websocket.Message;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @NoArgsConstructor
 @Data
-public class ChatMessage extends BaseMessage {
+class ChatMessage extends Message {
 
     private LocalDateTime timestamp = LocalDateTime.now();
 

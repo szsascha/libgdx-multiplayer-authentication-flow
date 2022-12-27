@@ -1,4 +1,4 @@
-package com.github.szsascha.game.multiplayer.server.websocket;
+package com.github.szsascha.game.multiplayer.client.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class BaseMessage implements Message {
+public class BaseMessageDto {
 
     private String operation;
 

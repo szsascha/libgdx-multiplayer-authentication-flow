@@ -2,7 +2,6 @@ package com.github.szsascha.game.multiplayer.state.progress;
 
 import com.github.szsascha.game.multiplayer.client.GameClient;
 import com.github.szsascha.game.multiplayer.state.GameState;
-import com.github.szsascha.game.multiplayer.state.GameStateHandler;
 import com.github.szsascha.game.multiplayer.ui.UI;
 import com.github.szsascha.game.multiplayer.ui.menu.Progression;
 

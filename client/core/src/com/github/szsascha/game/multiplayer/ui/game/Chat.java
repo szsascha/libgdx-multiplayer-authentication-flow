@@ -1,6 +1,5 @@
 package com.github.szsascha.game.multiplayer.ui.game;
 
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -23,6 +22,8 @@ import java.util.Set;
 
 @Log
 public class Chat implements UI {
+
+    private static final String TYPE_YOUR_CHAT_MESSAGE = "Type your chat message!";
 
     @Getter
     private final Stage stage = createNewStage();
@@ -48,7 +49,7 @@ public class Chat implements UI {
         table.add(scrollPane).height(150f).width(400f);
         table.row();
 
-        final TextField textField = new TextField("Type your chat message!", getSkin());
+        final TextField textField = new TextField(TYPE_YOUR_CHAT_MESSAGE, getSkin());
         textField.getColor().a = 0.4f;
         table.add(textField).width(400f);
 
@@ -59,14 +60,14 @@ public class Chat implements UI {
                     if (focusEvent.isFocused()) {
                         scrollPane.getColor().a = 1.0f;
                         textField.getColor().a = 1.0f;
-                        if (textField.getText().equals("Type your chat message!")) {
+                        if (textField.getText().equals(TYPE_YOUR_CHAT_MESSAGE)) {
                             textField.setText("");
                         }
                     } else {
                         scrollPane.getColor().a = 0.4f;
                         textField.getColor().a = 0.4f;
                         if (textField.getText().equals("")) {
-                            textField.setText("Type your chat message!");
+                            textField.setText(TYPE_YOUR_CHAT_MESSAGE);
                         }
                     }
                     getStage().setKeyboardFocus(textField);

@@ -1,4 +1,18 @@
 package com.github.szsascha.game.multiplayer.server.websocket;
 
-public interface Message {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.UUID;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class Message {
+
+    private String operation;
+
+    private UUID sessionId;
+
 }

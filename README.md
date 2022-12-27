@@ -26,7 +26,7 @@ The client consists of two main parts.
 
 The first is the default LibGDX architecture. In this example we've a desktop project with all the specialties for the desktop platform as well as the core project with the code that is shared between all the platforms.
 
-The first part is the client lib which is completely independent of LibGDX so it could be also used in other game frameworks and engines. The client lib is used by the LibGDX architecture to communicate with the server.
+The second part is the client lib which is completely independent of LibGDX so it could be also used in other game frameworks and engines. The client lib is used by the LibGDX architecture to communicate with the server.
 ### Server
 Spring boot is used as the server framework. There are HTTP endpoints to register and login as well as websocket endpoints for the ping functionality and the chat.
 

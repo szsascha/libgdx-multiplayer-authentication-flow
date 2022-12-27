@@ -2,9 +2,7 @@ package com.github.szsascha.game.multiplayer;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.github.szsascha.game.multiplayer.client.GameClient;
 import com.github.szsascha.game.multiplayer.client.GameClientState;
-import com.github.szsascha.game.multiplayer.state.GameState;
 import com.github.szsascha.game.multiplayer.state.GameStateHandler;
 
 public class MultiplayerGame extends Game {

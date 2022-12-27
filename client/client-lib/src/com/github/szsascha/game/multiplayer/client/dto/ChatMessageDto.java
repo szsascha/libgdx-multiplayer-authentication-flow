@@ -1,6 +1,5 @@
 package com.github.szsascha.game.multiplayer.client.dto;
 
-import com.github.szsascha.game.multiplayer.client.api.BaseMessage;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -9,7 +8,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChatMessageDto extends BaseMessage {
+public class ChatMessageDto extends BaseMessageDto {
 
     private LocalDateTime timestamp;
 

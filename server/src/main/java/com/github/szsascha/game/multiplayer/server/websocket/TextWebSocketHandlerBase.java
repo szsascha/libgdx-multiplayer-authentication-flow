@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Log
-public abstract class TextWebSocketHandlerBase<T extends BaseMessage> extends TextWebSocketHandler {
+public abstract class TextWebSocketHandlerBase<T extends Message> extends TextWebSocketHandler {
 
     @Getter(AccessLevel.PROTECTED)
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -78,25 +78,28 @@ public abstract class TextWebSocketHandlerBase<T extends BaseMessage> extends Te
     protected void handleInvalidSession(UUID sessionId) {
         final String message = String.format("No session with id '%s' found!", sessionId);
         log.warning(message);
-
-        if (webSocketSessions.containsKey(sessionId)) {
-            try (final WebSocketSession session = webSocketSessions.get(sessionId)) {
-                webSocketSessions.remove(sessionId);
-            } catch (IOException ignored) {}
-        }
-
+        cleanupSession(sessionId);
         throw new IllegalStateException(message);
     }
 
     protected abstract void handleMessage(CachedSession session, T message);
 
-    protected <T> T deserialize(TextMessage textMessage) throws JsonProcessingException {
+    protected T deserialize(TextMessage textMessage) throws JsonProcessingException {
         return getObjectMapper().readValue(textMessage.getPayload(), new TypeReference<>() {});
     }
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
         super.afterConnectionClosed(session, status);
+    }
 
+    private void cleanupSession(UUID sessionId) {
+        if (!webSocketSessions.containsKey(sessionId)) {
+            return;
+        }
+
+        try (final WebSocketSession session = webSocketSessions.get(sessionId)) {
+            webSocketSessions.remove(sessionId);
+        } catch (IOException ignored) {}
     }
 }

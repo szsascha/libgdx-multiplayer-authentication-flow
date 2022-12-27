@@ -9,8 +9,6 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.szsascha.game.multiplayer.client.GameClient;
 import com.github.szsascha.game.multiplayer.client.GameClientException;
-import com.github.szsascha.game.multiplayer.client.GameClientState;
-import com.github.szsascha.game.multiplayer.state.GameStateHandler;
 import com.github.szsascha.game.multiplayer.ui.UI;
 import com.github.szsascha.game.multiplayer.ui.util.InputListenerFactory;
 import lombok.Getter;
